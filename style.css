@@ -15,13 +15,13 @@
 .ston {
   width: 80px;
   height: 80px;
-  background-color: grey;
+  background-color: #fff;
+  border: 3px solid lightgrey;
   padding: 10px;
   cursor: pointer;
 }
 .ston_selected {
-  /* background-color: initial; */
-  background-color: red !important;
+  border: 3px solid red;
 }
 .ston img {
   width: 100%;
@@ -43,6 +43,7 @@
   border: 1px solid black;
   background-color: black;
   justify-content: center;
+  transition: all 0.6s;
 }
 .rows {
   display: flex;
@@ -65,7 +66,18 @@
   display: flex;
   cursor: pointer;
 }
-
+.cords_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.eff_3d {
+  padding: 8px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
 .hoveredCard {
   box-shadow: 0px 0px 31px 13px #ff2929 inset;
   /* background-color: rgba(255, 0, 0, 0.73) !important; */
@@ -73,6 +85,15 @@
 .hoveredCard1 {
   box-shadow: 0px 0px 31px 13px green inset;
   /* background-color: rgba(255, 0, 0, 0.73) !important; */
+}
+
+.click3D {
+  transition: all 0.6s;
+  transform: perspective(300px) rotateX(21deg) rotateY(0deg) rotateZ(0deg)
+    scale(0.9) translateX(0px) translateY(-50px) translateZ(50px);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .colorWhite {
   background-color: #fff;

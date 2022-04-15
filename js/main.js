@@ -1,6 +1,6 @@
 let chess_board = document.querySelector('.chess_board');
 let cards = document.querySelector('.cards');
-let clicked_stone = '';
+let clicked_stone = [];
 
 let card = '';
 for (let i = 0; i < chessObj.length; i++) {
@@ -26,8 +26,19 @@ function overCard(e) {
   });
 
   //   when stone clicked
-  if (clicked_stone == 'ot') {
+  console.log(clicked_stone);
+  if (clicked_stone[0] == 'ot') {
+    otFunc(e);
+  } else if (clicked_stone[0] == 'shoh') {
     shohFunc(e);
+  } else if (clicked_stone[0] == 'vazir') {
+    vazirFunc(e);
+  } else if (clicked_stone[0] == 'fil') {
+    filFunc(e);
+  } else if (clicked_stone[0] == 'tora') {
+    toraFunc(e);
+  } else if (clicked_stone[0] == 'piyoda') {
+    piyodaFunc(e);
   }
 }
 function leaveCard(e) {
@@ -45,7 +56,7 @@ stons.forEach((item) => {
     console.log(e.currentTarget);
     let stone_type =
       e.currentTarget.classList[e.currentTarget.classList.length - 1];
-    clicked_stone = stone_type;
+    clicked_stone[0] = stone_type;
     console.log(document.querySelector('.ston_selected'));
     if (document.querySelector('.ston_selected') !== null) {
       document
@@ -67,3 +78,12 @@ stons.forEach((item) => {
 //     item.classList.add('ston_selected')
 //   });
 // });
+
+function to3D(e) {
+  cards.classList.toggle('click3D');
+  if (e.target.innerHTML == '2D') {
+    e.target.innerHTML = '3D';
+  } else {
+    e.target.innerHTML = '2D';
+  }
+}
